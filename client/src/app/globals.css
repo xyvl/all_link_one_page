@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --main_color: white;
+  --text_color: black;
+  --text_active_color: rgb(0, 162, 255);
+}
+:root[data-theme="dark"]{
+  --main_color: black;
+  --text_color: white;
+  --text_active_color: rgb(0, 162, 255);
+}
+.wrapper{
+  max-width: 1400px;
+  margin: 0 auto;
+}
+a:hover{
+ @apply text-text-active-color duration-100ms ease-linear;
+}
+body {
+  @apply p-0 m-0 box-border bg-main-color text-text-color;
+}

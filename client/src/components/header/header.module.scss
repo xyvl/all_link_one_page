@@ -1,0 +1,12 @@
+.main {
+  @apply flex justify-between items-center;
+}
+.inner {
+  @apply flex items-center gap-5;
+}
+.link {
+  @apply text-2xl;
+}
+.text_size {
+  @apply text-2xl;
+}

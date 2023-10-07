@@ -1,0 +1,10 @@
+.main {
+  @apply fixed z-50 bg-main-color h-screen w-screen left-0 top-0;
+}
+.inner {
+  @apply absolute w-28 h-28 top-1/2 left-1/2;
+  transform: translate(-50%, -50%);
+}
+.spinner {
+  @apply w-full h-full border-r-8 border-r-text-active-color border-8 rounded-full animate-spin;
+}
