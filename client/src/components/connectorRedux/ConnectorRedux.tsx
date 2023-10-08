@@ -1,9 +1,12 @@
 "use client";
-
 import { store } from "@/store/store";
-import React from "react";
 import { Provider } from "react-redux";
+import { ConnectorData } from "../connectorData/ConnectorData";
 
 export const Connector = ({ children }: { children: React.ReactNode }) => {
-  return <Provider store={store}>{children}</Provider>;
+  return (
+    <Provider store={store}>
+      <ConnectorData>{children}</ConnectorData>
+    </Provider>
+  );
 };

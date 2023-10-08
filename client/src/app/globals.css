@@ -4,21 +4,70 @@
 
 :root {
   --main_color: white;
+  --main_color_50: rgba(255, 255, 255, 0.5);
   --text_color: black;
   --text_active_color: rgb(0, 162, 255);
 }
-:root[data-theme="dark"]{
+
+:root[data-theme="dark"] {
   --main_color: black;
+  --main_color_50: rgba(0, 0, 0, 0.5);
   --text_color: white;
   --text_active_color: rgb(0, 162, 255);
 }
-.wrapper{
+
+.wrapper {
   max-width: 1400px;
   margin: 0 auto;
 }
-a:hover{
- @apply text-text-active-color duration-100ms ease-linear;
+
+a:hover {
+  @apply text-text-active-color duration-100ms ease-linear;
 }
+
 body {
   @apply p-0 m-0 box-border bg-main-color text-text-color;
+}
+
+.standart_link {
+  @apply text-2xl;
+}
+
+@media (max-width: 1480px) {
+  .wrapper {
+    max-width: 1200px;
+  }
+}
+
+@media (max-width: 1250px) {
+  .wrapper {
+    max-width: 1024px;
+  }
+}
+
+@media (max-width: 1050px) {
+  .wrapper {
+    max-width: 768px;
+  }
+}
+
+@media (max-width: 800px) {
+  .wrapper {
+    max-width: 560px;
+  }
+}
+@media (max-width: 600px) {
+  .wrapper {
+    max-width: 420px;
+  }
+}
+@media (max-width: 450px) {
+  .wrapper {
+    max-width: 330px;
+  }
+}
+@media (max-width: 350px) {
+  .wrapper {
+    max-width: 80vw;
+  }
 }

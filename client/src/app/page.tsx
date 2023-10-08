@@ -1,11 +1,11 @@
 import { Header } from "@/components/header/Header"
-import { Spinner } from "@/components/spinner/Spinner"
+import { ProjectInfo } from "@/components/projectInfo/ProjectInfo"
 
 export default function Home() {
   return (
    <div>
     <Header/>
-    <Spinner/>
+    <ProjectInfo/>
    </div>
   )
 }

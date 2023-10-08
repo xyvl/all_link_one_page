@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit"
+import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 import { IInitialState } from "./TypeAccount"
 
 const initialState: IInitialState = {
@@ -11,7 +11,12 @@ const initialState: IInitialState = {
 export const accountSlice = createSlice({
 	name: 'accountSlice',
 	initialState,
-	reducers: {}
+	reducers: {
+		writeData(state, action: PayloadAction<IInitialState>){
+			state = action.payload
+		}
+	}
 })
 
 export const accountRoot = accountSlice.reducer;
+export const {writeData} = accountSlice.actions;

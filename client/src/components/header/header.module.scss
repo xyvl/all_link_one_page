@@ -1,12 +1,17 @@
+.mobile_main{
+  @apply hidden;
+}
 .main {
-  @apply flex justify-between items-center;
+  @apply flex justify-between items-center mt-5;
 }
 .inner {
   @apply flex items-center gap-5;
 }
-.link {
-  @apply text-2xl;
-}
-.text_size {
-  @apply text-2xl;
+@media (max-width: 800px) {
+  .main{
+    @apply absolute -top-full;
+  }
+  .mobile_main{
+    @apply flex justify-between;
+  }
 }

@@ -6,9 +6,14 @@ module.exports = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      borderRadius: {
+        "1/2": "50%",
+      },
+    },
     colors: {
       "main-color": "var(--main_color)",
+      "main-color-50": "var(--main_color_50)",
       "text-color": "var(--text_color)",
       "text-active-color": "var(--text_active_color)",
     },

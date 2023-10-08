@@ -1,38 +1,49 @@
-import React from "react";
-import logo from "./img/logo.png";
+"use client";
+import React, { useState } from "react";
 import Link from "next/link";
 import styles from "./header.module.scss";
+import { StateAccount } from "../stateAccount/StateAccount";
+import { Logo } from "@/img/logo/Logo";
+import { Theme } from "../theme/Theme";
+import { BurgerMenu } from "../burgerMenu/BurgerMenu";
 
 export const Header = () => {
+  const [navigation, setNavigation] = useState([
+    {
+      text: "Аккаунт",
+      url: "/account",
+    },
+    {
+      text: "Карточки",
+      url: "/card",
+    },
+  ]);
   return (
     <header>
       <div className="wrapper">
         <div className={styles.main}>
           <div className={styles.inner}>
-            <Link className={styles.link} href="/">
-              <img width="60" height="60" src={logo.src} alt="" />
-            </Link>
+            <Logo />
             <ul className={styles.inner}>
-              <li>
-                <Link className={styles.link} href="/account">
-                  Аккаунт
-                </Link>
-              </li>
-              <li>
-                <Link className={styles.link} href="/account">
-                  Карточки
-                </Link>
-              </li>
+              {navigation.map((el) => (
+                <li key={el.url}>
+                  <Link className="standart_link" href={el.url}>
+                    {el.text}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
-          <div>
-            <Link className={styles.link} href="/sign_in">
-              Войти
-            </Link>
-            <span className={styles.text_size}> / </span>
-            <Link className={styles.link} href="/sign_up">
-              Зарегистрироваться
-            </Link>
+          <div className={styles.inner}>
+            <Theme />
+            <StateAccount />
+          </div>
+        </div>
+        <div className={styles.mobile_main}>
+          <Logo />
+          <div className={styles.inner}>
+            <Theme />
+            <BurgerMenu />
           </div>
         </div>
       </div>
