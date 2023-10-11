@@ -17,6 +17,10 @@ app.use((req, res, next) => {
   next();
 });
 
+app.post('/test', (req, res) => {
+  res.json(req.body)
+})
+
 app.use('/user', userRouter)
 
 app.listen(PORT, () => {

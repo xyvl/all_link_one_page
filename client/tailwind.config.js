@@ -16,6 +16,7 @@ module.exports = {
       "main-color-50": "var(--main_color_50)",
       "text-color": "var(--text_color)",
       "text-active-color": "var(--text_active_color)",
+      "text-error": "var(--text_error)",
     },
     transitionDuration: {
       "100ms": "0.1s",

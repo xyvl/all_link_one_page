@@ -1,7 +1,9 @@
+import { UseMutateFunction } from "@tanstack/react-query"
+
 export interface IProps {
 	props: {
 		header: string
-		sendRequest: (e: React.ChangeEvent<HTMLFormElement>) => void
+		sendRequest: UseMutateFunction<any, unknown, void, unknown>
 		array: {
 			placeholder: string
 			type: string

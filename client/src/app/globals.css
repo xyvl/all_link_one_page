@@ -7,6 +7,7 @@
   --main_color_50: rgba(255, 255, 255, 0.5);
   --text_color: black;
   --text_active_color: rgb(0, 162, 255);
+  --text_error: rgb(255, 33, 33);
 }
 
 :root[data-theme="dark"] {
@@ -14,6 +15,7 @@
   --main_color_50: rgba(0, 0, 0, 0.5);
   --text_color: white;
   --text_active_color: rgb(0, 162, 255);
+  --text_error: rgb(255, 33, 33);
 }
 
 .wrapper {
