@@ -7,12 +7,14 @@ export const ConnectorData = ({ children }: { children: React.ReactNode }) => {
   const dispatch = useCustomDispatch();
   const [theme, setTheme] = useState<boolean>(false);
   useEffect(() => {
+    let login = localStorage.getItem("login") || "";
     let name = localStorage.getItem("name") || "";
     let surname = localStorage.getItem("surname") || "";
     let email = localStorage.getItem("email") || "";
     let password = localStorage.getItem("password") || "";
     dispatch(
       writeData({
+        login,
         name,
         surname,
         email,

@@ -2,6 +2,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 import { IInitialState } from "./TypeAccount"
 
 const initialState: IInitialState = {
+	login: '',
 	name: '',
 	surname: '',
 	email: '',
@@ -13,7 +14,11 @@ export const accountSlice = createSlice({
 	initialState,
 	reducers: {
 		writeData(state, action: PayloadAction<IInitialState>){
-			state = action.payload
+			state.login = action.payload.login
+			state.name = action.payload.name
+			state.surname = action.payload.surname
+			state.email = action.payload.email
+			state.password = action.payload.password
 		}
 	}
 })

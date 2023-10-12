@@ -1,9 +1,11 @@
 import { UseMutateFunction } from "@tanstack/react-query"
+import { IDataErrorSignUp } from "./TypeSignUp"
 
 export interface IProps {
 	props: {
 		header: string
-		sendRequest: UseMutateFunction<any, unknown, void, unknown>
+		sendRequest: UseMutateFunction<any, unknown, void, unknown>,
+		dataError: IDataErrorSignUp
 		array: {
 			placeholder: string
 			type: string

@@ -35,6 +35,21 @@ export const FormDataEntry = ({ props }: IProps) => {
           ))}
           <input type="submit" value={props.header} className={styles.submit} />
         </form>
+        {props.dataError.uniqueName !== "" ? (
+          <p className={styles.error} style={{textAlign: 'center'}}>{props.dataError.uniqueName}</p>
+        ) : null}
+        {props.dataError.name !== "" ? (
+          <p className={styles.error} style={{textAlign: 'center'}}>{props.dataError.name}</p>
+        ) : null}
+        {props.dataError.surname !== "" ? (
+          <p className={styles.error} style={{textAlign: 'center'}}>{props.dataError.surname}</p>
+        ) : null}
+        {props.dataError.email !== "" ? (
+          <p className={styles.error} style={{textAlign: 'center'}}>{props.dataError.email}</p>
+        ) : null}
+        {props.dataError.password !== "" ? (
+          <p className={styles.error} style={{textAlign: 'center'}}>{props.dataError.password}</p>
+        ) : null}
       </div>
     </div>
   );

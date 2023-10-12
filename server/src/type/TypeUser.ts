@@ -1,8 +1,9 @@
 export interface ISignIn {
-	email: string,
+	emailOrLogin: string,
 	password: string
 }
 export interface ISignUp {
+	uniqueName: string
 	name: string,
 	surname: string,
 	email: string,
@@ -11,12 +12,14 @@ export interface ISignUp {
 export interface IResponseSignUp {
 	error: boolean,
 	okBody: {
+		uniqueName: string
 		name: string
 		surname: string
 		email: string
 		password: string
 	}
 	errorBody: {
+		uniqueName: string
 		name: string
 		surname: string
 		email: string
@@ -26,6 +29,7 @@ export interface IResponseSignUp {
 export interface IResponseSignIn {
 	error: boolean,
 	okBody: {
+		uniqueName: string
 		name: string
 		surname: string
 		email: string
@@ -37,6 +41,7 @@ export interface IResponseSignIn {
 }
 export interface ICheckEmailRegistered {
 	id: number,
+	unique_name: string
 	name: string,
 	surname: string,
 	email: string,
