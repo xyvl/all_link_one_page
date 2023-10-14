@@ -18,18 +18,19 @@ export const StateAccount = () => {
     );
   }
 
-  const goOut = () => {
+  const goOut = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    e.preventDefault()
     localStorage.setItem("login", "");
     localStorage.setItem("name", "");
     localStorage.setItem("surname", "");
     localStorage.setItem("email", "");
     localStorage.setItem("password", "");
-    window.location.reload()
+    window.location.href = '/'
   };
 
   return (
     <div>
-      <Link className="standart_link" href="/" onClick={() => goOut()}>
+      <Link className="standart_link" href="/" onClick={(e) => goOut(e)}>
         Выйти
       </Link>
     </div>

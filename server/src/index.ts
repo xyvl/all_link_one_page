@@ -18,7 +18,7 @@ app.use((req, res, next) => {
 });
 
 app.post('/test', (req, res) => {
-  res.json(req.body)
+  res.json('hi')
 })
 
 app.use('/user', userRouter)

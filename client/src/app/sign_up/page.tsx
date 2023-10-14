@@ -1,6 +1,7 @@
 "use client";
 import { FormDataEntry } from "@/UI/formDataEntry/FormDataEntry";
 import { Header } from "@/components/header/Header";
+import { LoadingBlock } from "@/components/loadingBlock/LoadingBlock"
 import { regExpCheck } from "@/function/regex";
 import { IDataErrorSignUp, IResponseSignUp } from "@/type/TypeSignUp";
 import { useMutation } from "@tanstack/react-query";
@@ -52,7 +53,6 @@ const page = () => {
     };
 
     if (regExpCheck.validationLogin(login) === false) {
-      console.log("gfj");
       errorBool.login = true;
     }
     if (regExpCheck.validationNameAndSurname(name) === false) {
@@ -143,6 +143,7 @@ const page = () => {
 
   const arrayInput = {
     header: "Зарегистрироваться",
+    typeSign: 'signUp',
     sendRequest: signUp.mutate,
     dataError,
     array: [
@@ -192,8 +193,7 @@ const page = () => {
   return (
     <>
       <Header />
-      <FormDataEntry props={arrayInput} />
-      {signUp.isLoading === true ? <p color="red">Loading...</p> : null}
+      {signUp.isLoading === true ? <LoadingBlock/> : <FormDataEntry props={arrayInput} />}
     </>
   );
 };

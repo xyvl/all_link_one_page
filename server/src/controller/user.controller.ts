@@ -94,7 +94,23 @@ class User {
 			res.json(response)
 		} catch (e) {
 			console.log(e)
-			res.json('Непредвиденная ошибка')
+			res.json({
+				error: true,
+				okBody: {
+					uniqueName: '',
+					name: '',
+					surname: '',
+					email: '',
+					password: ''
+				},
+				errorBody: {
+					uniqueName: 'Непредвиденная ошибка',
+					name: '',
+					surname: '',
+					email: '',
+					password: ''
+				},
+			})
 		}
 	}
 	async signIn(req: Request<any, any, ISignIn>, res: Response) {
@@ -123,9 +139,11 @@ class User {
 				return
 			}
 
-			//Валидация если почта
+			// Валидация почты или логина
 
 			let checkEmailRegistered: QueryResult<ICheckEmailRegistered>
+
+			// Валидация логина
 
 			if (emailOrLogin.search('@') === -1) {
 				if (regExpCheck.validationLogin(emailOrLogin) === false) {
@@ -136,7 +154,8 @@ class User {
 				}
 				checkEmailRegistered = await db.query('select * from "user" where unique_name = $1 and password = $2',
 					[emailOrLogin, sha256Password(password)])
-			} else {
+			}
+			else {
 				checkEmailRegistered = await db.query('select * from "user" where email = $1 and password = $2',
 					[emailOrLogin, sha256Password(password)])
 			}
@@ -144,7 +163,7 @@ class User {
 
 			if (checkEmailRegistered.rowCount === 0) {
 				response.error = true
-				response.errorBody.text = 'Введенны не верные данные'
+				response.errorBody.text = 'Введены не верные данные'
 				res.json(response)
 				return
 			}
@@ -160,7 +179,20 @@ class User {
 			res.json(response)
 		} catch (e) {
 			console.log(e)
-			res.json('Непредвиденная ошибка')
+			res.json({
+				error: false,
+				okBody: {
+					uniqueName: '',
+					name: '',
+					surname: '',
+					email: '',
+					password: ''
+				},
+				errorBody: {
+					text: 'Непредвиденная ошибка'
+				},
+			}
+			)
 		}
 	}
 }

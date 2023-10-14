@@ -1,0 +1,6 @@
+.inner {
+  @apply w-40 h-40 mx-auto mt-5;
+}
+.spinner {
+  @apply w-full h-full border-r-8 border-r-text-active-color border-spacing-12 rounded-full animate-spin;
+}
