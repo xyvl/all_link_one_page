@@ -19,9 +19,16 @@ export const accountSlice = createSlice({
 			state.surname = action.payload.surname
 			state.email = action.payload.email
 			state.password = action.payload.password
+		},
+		clearUserData(state) {
+			state.login = ''
+			state.name = ''
+			state.surname = ''
+			state.email = ''
+			state.password = ''
 		}
 	}
 })
 
 export const accountRoot = accountSlice.reducer;
-export const {writeData} = accountSlice.actions;
+export const {writeData, clearUserData} = accountSlice.actions;

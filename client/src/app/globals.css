@@ -30,7 +30,6 @@ a:hover {
 body {
   @apply p-0 m-0 box-border bg-main-color text-text-color;
 }
-
 .standart_link {
   @apply text-2xl;
 }

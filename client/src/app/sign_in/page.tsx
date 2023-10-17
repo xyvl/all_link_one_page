@@ -13,14 +13,17 @@ const page = () => {
     text: ''
   });
 
-  const [loginOrEmail, setLoginorEmail] = useState("");
+  const [loginOrEmail, setLoginorEmail] = useState("xyvl");
   const [loginOrEmailError, setLoginOrEmailError] = useState("");
-  const [password, setPassword] = useState("");
+  const [password, setPassword] = useState("12345678");
   const [passwordError, setPasswordError] = useState("");
 
   const sendRequest = async (): Promise<void> => {
     setLoginOrEmailError("");
     setPasswordError("");
+    setDataError({
+      text: ''
+    })
 
     const errorBool = {
       loginOrEmail: false,

@@ -180,7 +180,7 @@ class User {
 		} catch (e) {
 			console.log(e)
 			res.json({
-				error: false,
+				error: true,
 				okBody: {
 					uniqueName: '',
 					name: '',

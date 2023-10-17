@@ -1,7 +1,7 @@
 "use client";
 import { FormDataEntry } from "@/UI/formDataEntry/FormDataEntry";
 import { Header } from "@/components/header/Header";
-import { LoadingBlock } from "@/components/loadingBlock/LoadingBlock"
+import { LoadingBlock } from "@/components/loadingBlock/LoadingBlock";
 import { regExpCheck } from "@/function/regex";
 import { IDataErrorSignUp, IResponseSignUp } from "@/type/TypeSignUp";
 import { useMutation } from "@tanstack/react-query";
@@ -10,11 +10,11 @@ import React, { useState } from "react";
 
 const page = () => {
   const [dataError, setDataError] = useState<IDataErrorSignUp>({
-    uniqueName: '',
-    name: '',
-    surname: '',
-    email: '',
-    password: '',
+    uniqueName: "",
+    name: "",
+    surname: "",
+    email: "",
+    password: "",
   });
 
   const [login, setLogin] = useState("");
@@ -34,7 +34,14 @@ const page = () => {
     setSurnameError("");
     setEmailError("");
     setPasswordError("");
-
+    setDataError({
+      uniqueName: "",
+      name: "",
+      surname: "",
+      email: "",
+      password: "",
+    });
+    
     const errorBool = {
       login: false,
       name: false,
@@ -108,12 +115,12 @@ const page = () => {
         setDataError(data.errorBody);
         return;
       }
-      localStorage.setItem('login', data.okBody.uniqueName)
-      localStorage.setItem('name', data.okBody.name)
-      localStorage.setItem('surname', data.okBody.surname)
-      localStorage.setItem('email', data.okBody.email)
-      localStorage.setItem('password', data.okBody.password)
-      window.location.href = '/'
+      localStorage.setItem("login", data.okBody.uniqueName);
+      localStorage.setItem("name", data.okBody.name);
+      localStorage.setItem("surname", data.okBody.surname);
+      localStorage.setItem("email", data.okBody.email);
+      localStorage.setItem("password", data.okBody.password);
+      window.location.href = "/";
     }
   };
   const maskLogin = (value: string) => {
@@ -143,7 +150,7 @@ const page = () => {
 
   const arrayInput = {
     header: "Зарегистрироваться",
-    typeSign: 'signUp',
+    typeSign: "signUp",
     sendRequest: signUp.mutate,
     dataError,
     array: [
@@ -193,7 +200,11 @@ const page = () => {
   return (
     <>
       <Header />
-      {signUp.isLoading === true ? <LoadingBlock/> : <FormDataEntry props={arrayInput} />}
+      {signUp.isLoading === true ? (
+        <LoadingBlock />
+      ) : (
+        <FormDataEntry props={arrayInput} />
+      )}
     </>
   );
 };

@@ -10,13 +10,17 @@ export const BurgerMenu = () => {
     { text: "Аккаунт", url: "/account" },
     { text: "Карточки", url: "/card" },
   ]);
+  const burgerMenuClick = () => {
+    setBurgerMenu((curr) => !curr)
+    document.body.classList.toggle('overflow-hidden')
+  }
   return (
     <div>
       <div
         className={`${styles.burger_menu} ${
           burgerMenu ? `${styles.active}` : ""
         }`}
-        onClick={() => setBurgerMenu((curr) => !curr)}
+        onClick={() => burgerMenuClick()}
       >
         <span
           className={`${styles.burger_menu_line} ${

@@ -1,0 +1,18 @@
+.header{
+	@apply text-4xl text-center mt-5;
+}
+.info_block{
+	@apply text-2xl;
+}
+.width_check{
+	@apply text-2xl pl-3 pr-3 absolute -left-7 -top-10;
+}
+.input{
+	@apply bg-main-color border-1 border-text-color text-2xl pl-3 ml-3;
+	width: 24px;
+}
+@media (max-width: 450px) {
+	.header{
+		@apply text-2xl;
+	}
+}

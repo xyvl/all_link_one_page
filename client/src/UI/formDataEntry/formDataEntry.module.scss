@@ -23,6 +23,83 @@
     @apply bg-text-color text-main-color;
   }
 }
-.error{
-	@apply text-text-error text-xl mt-2;
+.error {
+  @apply text-text-error text-xl mt-2;
+}
+
+// Медиа
+
+@media (max-width: 1480px) {
+  .block_input {
+    @apply w-4/10;
+  }
+  .submit {
+    @apply w-4/10;
+  }
+}
+
+@media (max-width: 1250px) {
+  .block_input {
+    @apply w-5/10;
+  }
+  .submit {
+    @apply w-5/10;
+  }
+}
+
+// @media (max-width: 1050px) {
+
+// }
+
+@media (max-width: 800px) {
+  .block_input {
+    @apply w-7/10 text-xl;
+  }
+  .submit {
+    @apply w-7/10 text-xl;
+  }
+  .link {
+    @apply text-xl;
+  }
+}
+@media (max-width: 600px) {
+  .title {
+    @apply text-3xl;
+  }
+  .block_input {
+    @apply w-8/10;
+  }
+  .submit {
+    @apply w-8/10;
+  }
+}
+@media (max-width: 450px) {
+  .title {
+    @apply text-3xl;
+  }
+  .block_input {
+    @apply w-9/10;
+  }
+  .submit {
+    @apply w-9/10;
+  }
+  .link {
+    @apply text-xl;
+  }
+}
+@media (max-width: 350px) {
+  .title {
+    font-size: 8vw;
+  }
+  .link {
+    font-size: 6vw;
+  }
+  .block_input {
+    @apply w-full;
+    font-size: 5vw;
+  }
+  .submit {
+    @apply w-full;
+    font-size: 5vw;
+  }
 }
