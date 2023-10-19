@@ -1,0 +1,11 @@
+.svg {
+	@apply w-7 h-7 bg-main-color cursor-pointer inline-block absolute top-1/2 -right-12;
+	transform: translate(-50%,-50%);
+
+	&:hover > path {
+		@apply fill-text-active-color;
+	}
+	> path {
+		@apply w-7 h-7 fill-text-color;
+	}
+}

@@ -1,18 +1,50 @@
-.header{
+.header {
 	@apply text-4xl text-center mt-5;
 }
-.info_block{
+.info_block {
 	@apply text-2xl;
 }
-.width_check{
+.width_check {
 	@apply text-2xl pl-3 pr-3 absolute -left-7 -top-10;
 }
-.input{
-	@apply bg-main-color border-1 border-text-color text-2xl pl-3 ml-3;
+.input {
+	@apply bg-main-color outline-2 outline-text-color text-2xl pl-3 duration-100ms;
+	outline-style: solid;
 	width: 24px;
+	&:focus-visible {
+		@apply rounded-md outline-text-active-color;
+	}
+}
+.block_data{
+	@apply relative;
+}
+.grid {
+	display: grid;
+	margin-top: 20px;
+	grid-template-columns: 1fr 1fr;
+	gap: 10px;
+}
+.table_name {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	grid-gap: 10px;
+	margin-left: auto;
+}
+.table_value {
+	display: flex;
+	flex-direction: column;
+	grid-gap: 10px;
+	align-items: flex-start;
+}
+.change_password {
+	@apply text-xl border-text-color border-2 px-3 py-2 rounded-md cursor-pointer duration-200ms uppercase block mx-auto mt-5;
+	&:hover {
+		@apply bg-text-color text-main-color;
+	}
 }
 @media (max-width: 450px) {
-	.header{
+	.header {
 		@apply text-2xl;
 	}
 }
